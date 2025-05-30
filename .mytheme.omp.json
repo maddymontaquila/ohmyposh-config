@@ -40,7 +40,7 @@
     "powerline_symbol": "\ue0b0",
   	"foreground": "transparent",
 	  "background": "#ccc3ee",
-	  "template": " \udb82\udeae {{ .Major}}.{{.Minor}}.{{Patch}} ",
+	  "template": " \udb82\udeae {{ .Major}}.{{.Minor}}.{{.Patch}} ",
 	  "properties": {
               "display_mode": "always"
               }
