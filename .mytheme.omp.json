@@ -8,20 +8,6 @@
       "alignment": "left",
       "segments": [
         {
-          "type": "session",
-          "style": "diamond",
-          "leading_diamond": "<#ff70a6> \ue200 </>",
-          "template": "{{ .UserName }} <#ffffff>on</>",
-          "properties": {
-            "display_host": true
-          },
-          "background": "",
-          "foreground": "#ffbebc",
-          "Text": "",
-          "Duration": 0,
-          "NameLength": 0
-        },
-        {
           "type": "time",
           "style": "diamond",
           "template": " {{ .CurrentDate | date .Format }} ",
@@ -34,10 +20,28 @@
           "Duration": 0,
           "NameLength": 0
         },
+	{
+          "type": "path",
+          "style": "diamond",
+          "leading_diamond": "<#00c7fc> \ue285 </><#ffafd2>{</>",
+          "trailing_diamond": "<#ffafd2>}</>",
+          "template": " \ue5ff {{ .Path }} ",
+          "properties": {
+            "folder_icon": "\uf07b",
+            "folder_separator_icon": " \uf444 ",
+            "home_icon": "\udb80\udedc",
+            "style": "agnoster_short"
+          },
+          "background": "",
+          "foreground": "#ffafd2",
+          "Text": "",
+          "Duration": 0,
+          "NameLength": 0
+        },
        {
   	"type": "dotnet",
   	"style": "powerline",
-    "powerline_symbol": "\ue0b0",
+    	"powerline_symbol": "\ue0b0",
   	"foreground": "transparent",
 	  "background": "#ccc3ee",
 	  "template": " \udb82\udeae {{ .Major}}.{{.Minor}}.{{.Patch}} ",
@@ -61,9 +65,25 @@
           "Text": "",
           "Duration": 0,
           "NameLength": 0
+        },
+	{
+          "type": "status",
+          "style": "plain",
+          "foreground_templates": [
+            "{{ if gt .Code 0 }}#ef5350{{ end }}"
+          ],
+          "template": " \uf21e ",
+          "properties": {
+            "always_enabled": true
+          },
+          "background": "",
+          "foreground": "#ffffff",
+          "Text": "",
+          "Duration": 0,
+          "NameLength": 0
         }
       ],
-      "newline": true
+	    
     },
     {
       "type": "prompt",
